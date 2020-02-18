@@ -108,6 +108,11 @@ class MyTreeSet{
         while (value.hasNext()) { 
             System.out.println(value.next()); 
         } 
+
+        System.out.println("Another approach of iterating..");
+        for( String s: set){
+            System.out.println(s);
+        }
     } 
 
     public static void main(String[] args) {
