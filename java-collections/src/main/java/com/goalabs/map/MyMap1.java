@@ -9,14 +9,10 @@ public class MyMap1 {
 
 //     This uses entryset method for traversing
     public static void getValue1(  Map<Integer,String>  tmpMap){
-
         for( Map.Entry m : tmpMap.entrySet() ){
             System.out.println(m.getKey()+" -- "+m.getValue());
         }
-
-
     }
-
 
     // This uses the stream....
     public static void getValue2(Map <Integer, String> tmpMap){
@@ -58,7 +54,6 @@ public class MyMap1 {
         MyMap1.getValue2(mymap);
         MyMap1.getValue3(mymap);
         MyMap1.getValue4(mymap);
-
 
     }
 
