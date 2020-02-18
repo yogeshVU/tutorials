@@ -27,8 +27,6 @@ public class MyMap1 {
 
     // This uses the iterator function...
     public static void getValue3(Map<Integer,String> tmpMap){
-
-
         Set myset = tmpMap.entrySet();
         Iterator itr = myset.iterator();
 

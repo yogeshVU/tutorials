@@ -4,9 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MyLinkedHashMap1 {
-
-
-
     public static void getValue1(LinkedHashMap<Integer,String> tmpMap){
 
         for(Map.Entry<Integer,String> m: tmpMap.entrySet()){
