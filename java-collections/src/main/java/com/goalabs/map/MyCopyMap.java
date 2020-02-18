@@ -2,7 +2,12 @@ package com.goalabs.map;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Set;
+import java.util.Map;
+
+import edu.emory.mathcs.backport.java.util.TreeMap.Entry;
 
 public class MyCopyMap {
     public static <Integer,String> LinkedHashMap<Integer,String> myCopy1(LinkedHashMap<Integer,String> tmpMap) {
@@ -18,6 +23,16 @@ public class MyCopyMap {
         return shallowCopy;
     }
     
+
+    public static <Integer,String> LinkedHashMap<Integer,String> copyUsingPut(LinkedHashMap<Integer,String> tmpMap){
+        Set<Map.Entry<Integer,String>> myset = tmpMap.entrySet();
+        LinkedHashMap<Integer,String> newTmpMap = new LinkedHashMap<Integer,String>();
+
+        for (Map.Entry<Integer,String> tmpEntry: myset){
+            newTmpMap.put(tmpEntry.getKey(), tmpEntry.getValue());
+        }
+        return newTmpMap;
+    }
 
     public static void traverseMap(HashMap<Integer,String> tmpMap){
 
@@ -38,6 +53,9 @@ public class MyCopyMap {
         LinkedHashMap<Integer,String> tmp3 = MyCopyMap.copyUsingPutAll(myHashMap);
         MyCopyMap.traverseMap(tmp3);
 
+        tmp3.put(13, "value");    
+        LinkedHashMap<Integer,String> tmp4 = MyCopyMap.copyUsingPut(tmp3);
+        MyCopyMap.traverseMap(tmp4);
 
     }
 }
