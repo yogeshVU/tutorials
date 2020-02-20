@@ -11,6 +11,7 @@
     <modules>
         <module>java-collections</module>
         <module>java-core</module>
+        <module>java-concurrency</module>
     </modules>
 
 

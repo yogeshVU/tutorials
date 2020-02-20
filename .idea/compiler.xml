@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="java-collections" />
+        <module name="java-concurrency" />
         <module name="java-core" />
       </profile>
     </annotationProcessing>
