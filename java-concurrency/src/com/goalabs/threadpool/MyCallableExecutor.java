@@ -42,9 +42,7 @@ public class MyCallableExecutor {
             Long number = null;
             try {
                 number = result.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
             System.out.printf("Main: Task %d\n", number);
