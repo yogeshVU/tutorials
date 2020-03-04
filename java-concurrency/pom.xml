@@ -28,7 +28,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <configuration>
-                    <!--                    <mainClass>com.goalabs.map.MyMap1</mainClass>-->
+                                        <mainClass>com.goalabs.threading.MyApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
