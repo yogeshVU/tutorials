@@ -1,7 +1,10 @@
 package com.goalabs.streams;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -13,6 +16,11 @@ public class MyStream {
     static class User {
         private String name;
         private Integer age = 30;
+        private List<Integer> phoneNumber = Arrays.asList(120,10,20,30);
+
+        public List<Integer> getPhoneNumbers(){
+            return phoneNumber;
+        }
 
         public User(String name) {
             this.name = name;
@@ -148,6 +156,14 @@ public class MyStream {
                 .sum();
 
         System.out.println(sum);
+
+
+        Optional<Integer> stringOptional = userList.stream()
+                .map(user -> user.getPhoneNumbers().stream())
+                .flatMap(integerStream -> integerStream.filter(phoneNo -> !phoneNo.equals(10)))
+                .findFirst();
+
+        stringOptional.ifPresent(System.out::println);
 
     }
 
