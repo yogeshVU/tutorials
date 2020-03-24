@@ -6,8 +6,39 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+
+
 public class MyStream {
 
+    static class User {
+        private String name;
+        private Integer age = 30;
+
+        public User(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getAge() {
+            return age;
+        }
+
+        public void setAge(Integer age) {
+            this.age = age;
+        }
+
+        @Override
+        public String toString() {
+            return "name : " + name + " age : " + age;
+        }
+    }
 
     MyStream(){
         System.out.println("Creating MyStream Object");
@@ -87,6 +118,39 @@ public class MyStream {
     }
 
 
+    void intro9(){
+
+        List<String> names = Arrays.asList("Peter", "Sam", "Greg", "Ryan");
+
+//        System.out.println("Imperative Style: ");
+//
+//        for (String name : names) {
+//            if (!name.equals("Sam")) {
+//                User user = new User(name);
+//                System.out.println(user);
+//            }
+//        }
+
+//        System.out.println("Functional Style: ");
+
+        names.stream()
+                .filter(MyStream::isNotSam)
+                .map(User::new)
+                .forEach(System.out::println);
+
+        List<User> userList = names.stream()
+                .filter(MyStream::isNotSam)
+                .map(User::new)
+                .collect(Collectors.toList());
+
+        int sum = userList.stream()
+                .mapToInt(User::getAge)
+                .sum();
+
+        System.out.println(sum);
+
+    }
+
 
     private static boolean isNotSam(String name) {
         return !name.equals("Sam");
@@ -105,7 +169,7 @@ public class MyStream {
 
 //        a.intro1();
 //        a.intro2();
-        a.intro8();
+        a.intro9();
     }
 }
 
