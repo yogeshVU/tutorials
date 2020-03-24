@@ -12,6 +12,7 @@
         <module>java-collections</module>
         <module>java-concurrency</module>
         <module>java-core</module>
+        <module>java-streams</module>
     </modules>
 
 

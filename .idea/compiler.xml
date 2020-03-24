@@ -9,6 +9,7 @@
         <module name="java-collections" />
         <module name="java-concurrency" />
         <module name="java-core" />
+        <module name="java-streams" />
       </profile>
     </annotationProcessing>
   </component>
