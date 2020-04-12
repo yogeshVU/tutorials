@@ -158,12 +158,12 @@ public class MyStream {
         System.out.println(sum);
 
 
-        Optional<Integer> stringOptional = userList.stream()
+        Optional<Integer> integerOptional = userList.stream()
                 .map(user -> user.getPhoneNumbers().stream())
                 .flatMap(integerStream -> integerStream.filter(phoneNo -> !phoneNo.equals(10)))
                 .findFirst();
 
-        stringOptional.ifPresent(System.out::println);
+        integerOptional.ifPresent(System.out::println);
 
     }
 
